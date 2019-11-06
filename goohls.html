@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="iso-8859-1">
+    <title>Video Player</title>
+    <script src="//bowercdn.net/c/jquery-1.11.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jwplayer.com/libraries/asmi2gLG.js"></script>
+    <meta name="robots" content="noindex,nofollow" />
+    <style>
+        html,
+        body,
+        #container {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            color: #fff;
+            overflow: hidden
+        }
+        
+        #container {
+            position: absolute;
+            text-align: center
+        }
+        
+        video {
+            outline: 0
+        }
+    </style>
+</head>
+
+<body style="background: #000;">
+    <style>
+        .loader {
+            position: relative;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background-color: #000;
+        }
+        
+        .loader img {
+            overflow: auto;
+            margin: auto;
+            position: absolute;
+            max-width: 40%;
+            max-height: 40%;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+    </style>
+
+    <div class="loader"><img class="logo" src="https://i.imgur.com/Q1HCyms.gif"></div>
+
+    <script>
+        window.onload = function() {
+            //display loader on page load 
+            $('.loader').fadeOut();
+        }
+    </script>
+
+    <div id="container">
+        <div id="player"></div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            var setup = {
+                "playlist": [{
+                    "image": "https://image.tmdb.org/t/p/w1280/zIZv4pPJRg3YTnWWuotwXnYu1fM.jpg",
+                    "sources": [{
+                        "default": true,
+                        "file": "/hls/goodboys.m3u8",
+                        "type": "hls",
+                        "label": "0"
+                    }],
+                }],
+                "primary": "html5",
+                "hlshtml": true,
+                "autostart": false,
+                "width": $(window).width(),
+                "height": $(window).height(),
+            };
+            jwplayer('player').setup(setup);
+            $(window).resize(function() {
+                jwplayer().resize($(window).width(), $(window).height());
+            });
+        });
+    </script>
+</body>
+</html>
