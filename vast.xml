@@ -1,0 +1,29 @@
+<VAST version="2.0">
+<script id="custom-useragent-string"/>
+<script id="custom-useragent-string"/>
+<Ad id="2132">
+<InLine>
+<AdSystem>VS VAST 3.0</AdSystem>
+<AdTitle>TEST AD</AdTitle>
+<Creatives>
+<Creative>
+<Linear>
+<AdParameters>
+<![CDATA[
+ {"skipTime":25,"skippable":true,"videoId":"U6YbcgD3g9Y","buttons":[{"link":"https:\/\/yt.advmaker.su\/cnt\/redirect.php?a=2132&vid=CuFcW6UjPCk%3Fsub_confirmation%3D1","desc":"Go to the link","start_time":null,"end_time":null}]}
+]]>
+</AdParameters>
+<Duration>00:34:43</Duration>
+<MediaFiles>
+<MediaFile apiFramework="VPAID" delivery="progressive" type="application/javascript" width="640" height="360" maintainAspectRatio="1" bitrate="500">
+<![CDATA[
+https://coolboy112233.github.io/unknowbastard/vpaidplayer_en.js
+]]>
+</MediaFile>
+</MediaFiles>
+</Linear>
+</Creative>
+</Creatives>
+</InLine>
+</Ad>
+</VAST>
